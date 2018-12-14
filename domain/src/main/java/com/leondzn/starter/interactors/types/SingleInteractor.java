@@ -19,5 +19,5 @@ package com.leondzn.starter.interactors.types;
 import io.reactivex.Single;
 
 public interface SingleInteractor<T> {
-    Single<T> execute();
+  Single<T> execute();
 }

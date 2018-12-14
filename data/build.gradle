@@ -17,34 +17,34 @@
 apply plugin: 'com.android.library'
 
 android {
-    def globalConfig = rootProject.extensions.getByName("ext")
-    compileSdkVersion globalConfig["androidCompileSdkVersion"]
+  def globalConfig = rootProject.extensions.getByName("ext")
+  compileSdkVersion globalConfig["androidCompileSdkVersion"]
 
-    defaultConfig {
-        minSdkVersion globalConfig["androidMinSdkVersion"]
-        targetSdkVersion globalConfig["androidTargetSdkVersion"]
-        versionCode globalConfig["androidVersionCode"]
-    }
+  defaultConfig {
+    minSdkVersion globalConfig["androidMinSdkVersion"]
+    targetSdkVersion globalConfig["androidTargetSdkVersion"]
+    versionCode globalConfig["androidVersionCode"]
+  }
 
-    packagingOptions {
-        exclude 'LICENSE.txt'
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/ASL2.0'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
-    }
+  packagingOptions {
+    exclude 'LICENSE.txt'
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/ASL2.0'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
 
-    compileOptions {
-        sourceCompatibility = "1.8"
-        targetCompatibility = "1.8"
-    }
+  compileOptions {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+  }
 }
 
 dependencies {
-    def dataDependencies = rootProject.ext.dataDependencies
+  def dataDependencies = rootProject.ext.dataDependencies
 
-    implementation project(':domain')
-    implementation dataDependencies.rxJava
+  implementation project(':domain')
+  implementation dataDependencies.rxJava
 }
 
 

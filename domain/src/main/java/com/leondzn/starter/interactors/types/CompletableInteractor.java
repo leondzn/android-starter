@@ -19,5 +19,5 @@ package com.leondzn.starter.interactors.types;
 import io.reactivex.Completable;
 
 public interface CompletableInteractor {
-    Completable execute();
+  Completable execute();
 }

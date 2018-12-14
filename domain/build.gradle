@@ -17,10 +17,10 @@
 apply plugin: 'java'
 
 dependencies {
-    def domainDependencies = rootProject.ext.domainDependencies
+  def domainDependencies = rootProject.ext.domainDependencies
 
-    implementation domainDependencies.rxJava
-    implementation domainDependencies.javaxInject
+  implementation domainDependencies.rxJava
+  implementation domainDependencies.javaxInject
 }
 
 sourceCompatibility = "1.8"

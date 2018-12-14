@@ -18,6 +18,6 @@ package com.leondzn.starter.interactors.types;
 
 import io.reactivex.Single;
 
-public interface SingleInteractorWithParameter<P,R> {
-    Single<R> execute(P param);
+public interface SingleInteractorWithParameter<P, R> {
+  Single<R> execute(P param);
 }

@@ -19,5 +19,5 @@ package com.leondzn.starter.interactors.types;
 import io.reactivex.Observable;
 
 public interface ObservableInteractor<T> {
-    Observable<T> execute();
+  Observable<T> execute();
 }

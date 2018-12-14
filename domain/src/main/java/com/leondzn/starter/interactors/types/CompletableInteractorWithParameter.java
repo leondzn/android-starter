@@ -19,5 +19,5 @@ package com.leondzn.starter.interactors.types;
 import io.reactivex.Completable;
 
 public interface CompletableInteractorWithParameter<P> {
-    Completable execute(P param);
+  Completable execute(P param);
 }

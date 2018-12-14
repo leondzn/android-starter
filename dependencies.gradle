@@ -15,38 +15,38 @@
  */
 
 ext {
-    //android
-    androidCompileSdkVersion = 28
-    androidTargetSdkVersion = 28
-    androidMinSdkVersion = 21
+  //android
+  androidCompileSdkVersion = 28
+  androidTargetSdkVersion = 28
+  androidMinSdkVersion = 21
 
-    //libraries
-    rxJavaVersion = '2.1.7'
-    rxAndroidVersion = '2.1.0'
-    javaxInjectVersion = '1'
-    androidAppcompatVersion = '28.0.0-rc01'
-    dagger2Version = '2.17'
-    lifecycleVersion = '1.1.1'
+  //libraries
+  rxJavaVersion = '2.1.7'
+  rxAndroidVersion = '2.1.0'
+  javaxInjectVersion = '1'
+  androidAppcompatVersion = '28.0.0-rc01'
+  dagger2Version = '2.17'
+  lifecycleVersion = '1.1.1'
 
-    domainDependencies = [
-        rxJava: "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
-        javaxInject: "javax.inject:javax.inject:${javaxInjectVersion}"
-    ]
+  domainDependencies = [
+      rxJava     : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+      javaxInject: "javax.inject:javax.inject:${javaxInjectVersion}"
+  ]
 
-    dataDependencies = [
-        rxJava: "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
-        dagger2: "com.google.dagger:dagger:${dagger2Version}",
-        dagger2compiler: "com.google.dagger:dagger-compiler:${dagger2Version}",
-    ]
+  dataDependencies = [
+      rxJava         : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+      dagger2        : "com.google.dagger:dagger:${dagger2Version}",
+      dagger2compiler: "com.google.dagger:dagger-compiler:${dagger2Version}",
+  ]
 
-    appDependencies = [
-        androidAppcompat: "com.android.support:appcompat-v7:${androidAppcompatVersion}",
-        rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-        dagger2: "com.google.dagger:dagger:${dagger2Version}",
-        dagger2compiler: "com.google.dagger:dagger-compiler:${dagger2Version}",
-        daggerAndroid: "com.google.dagger:dagger-android:${dagger2Version}",
-        daggerAndroidSupport: "com.google.dagger:dagger-android-support:${dagger2Version}",
-        daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:${dagger2Version}",
-        lifecycle: "android.arch.lifecycle:extensions:${lifecycleVersion}",
-    ]
+  appDependencies = [
+      androidAppcompat      : "com.android.support:appcompat-v7:${androidAppcompatVersion}",
+      rxAndroid             : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+      dagger2               : "com.google.dagger:dagger:${dagger2Version}",
+      dagger2compiler       : "com.google.dagger:dagger-compiler:${dagger2Version}",
+      daggerAndroid         : "com.google.dagger:dagger-android:${dagger2Version}",
+      daggerAndroidSupport  : "com.google.dagger:dagger-android-support:${dagger2Version}",
+      daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:${dagger2Version}",
+      lifecycle             : "android.arch.lifecycle:extensions:${lifecycleVersion}",
+  ]
 }

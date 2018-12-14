@@ -19,10 +19,9 @@ package com.leondzn.starter.interactors.types;
 import io.reactivex.Observable;
 
 /**
- *
  * @param <P> Parameter object
  * @param <R> Response data type for the Observable
  */
-public interface ObservableInteractorWithParameter<P,R> {
-    Observable<R> execute(P param);
+public interface ObservableInteractorWithParameter<P, R> {
+  Observable<R> execute(P param);
 }
