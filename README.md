@@ -1,7 +1,8 @@
 # Android Starter
 A starter template for Android app project that implements Clean Architecture using RxJava.
 Dagger2 is used for dependency injection and lambdas are enabled with Retrolambda.
-You are free to implement any design pattern such as MVP or MVVM.
+Base classes for implementing MVVM are also included in this starter project although you are free to implement
+other design patterns if needed.
 
 Prior knowledge with Clean Architecture and RxJava is required to use this starter project.
 
