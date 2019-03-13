@@ -15,6 +15,8 @@
  */
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
   compileSdkVersion rootProject.androidCompileSdkVersion
@@ -48,6 +50,7 @@ dependencies {
 
   implementation project(':domain')
   implementation project(':data')
+  implementation rootProject.ext.kotlinLib
   implementation appDependencies.androidAppcompat
   implementation appDependencies.rxAndroid
   implementation appDependencies.dagger2
@@ -56,6 +59,9 @@ dependencies {
 
   annotationProcessor appDependencies.dagger2compiler
   annotationProcessor appDependencies.daggerAndroidProcessor
+}
+repositories {
+  mavenCentral()
 }
 
 
