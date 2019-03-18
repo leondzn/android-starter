@@ -20,9 +20,9 @@ buildscript {
   apply from: 'dependencies.gradle' // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
   repositories {
+    jcenter()
     google()
     mavenCentral()
-    jcenter()
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:3.3.2'
@@ -35,8 +35,8 @@ buildscript {
 
 allprojects {
   repositories {
-    google()
     jcenter()
+    google()
     mavenCentral()
   }
   ext {

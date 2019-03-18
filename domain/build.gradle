@@ -20,5 +20,6 @@ dependencies {
   def domainDependencies = rootProject.ext.domainDependencies
 
   implementation domainDependencies.rxJava
+  implementation domainDependencies.coroutines
   implementation domainDependencies.javaxInject
 }

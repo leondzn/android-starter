@@ -31,9 +31,11 @@ ext {
   androidAppcompatVersion = '28.0.0-rc01'
   dagger2Version = '2.17'
   lifecycleVersion = '1.1.1'
+  coroutinesVersion = '1.1.1'
 
   domainDependencies = [
       rxJava     : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+      coroutines : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}",
       javaxInject: "javax.inject:javax.inject:${javaxInjectVersion}"
   ]
 
