@@ -54,6 +54,7 @@ dependencies {
   implementation rootProject.ext.kotlinLib
   implementation appDependencies.androidAppcompat
   implementation appDependencies.rxAndroid
+  implementation appDependencies.lifecycle
   implementation appDependencies.dagger2
   implementation appDependencies.daggerAndroid
   implementation appDependencies.daggerAndroidSupport
