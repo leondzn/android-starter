@@ -17,6 +17,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion rootProject.androidCompileSdkVersion
@@ -57,12 +58,9 @@ dependencies {
   implementation appDependencies.daggerAndroid
   implementation appDependencies.daggerAndroidSupport
 
-  annotationProcessor appDependencies.dagger2compiler
-  annotationProcessor appDependencies.daggerAndroidProcessor
+  kapt appDependencies.dagger2compiler
+  kapt appDependencies.daggerAndroidProcessor
 }
 repositories {
   mavenCentral()
 }
-
-
-

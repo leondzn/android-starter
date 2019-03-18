@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 
-package com.leondzn.starter.di.scopes;
+package com.leondzn.starter.di.components
 
+import com.leondzn.starter.App
+import com.leondzn.starter.di.scopes.ApplicationScope
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import dagger.Component
+import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
 
-import javax.inject.Scope;
-
-@Scope
-@Retention(RetentionPolicy.RUNTIME)
-public @interface DialogScope {
+@Component(modules = [AndroidSupportInjectionModule::class])
+@ApplicationScope
+interface AppComponent : AndroidInjector<App> {
+  @Component.Builder
+  abstract class Builder : AndroidInjector.Builder<App>()
 }

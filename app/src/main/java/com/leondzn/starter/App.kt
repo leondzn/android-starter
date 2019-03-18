@@ -14,34 +14,33 @@
  * limitations under the License.
  */
 
-package com.leondzn.starter;
+package com.leondzn.starter
 
-import android.app.Activity;
-import android.app.Application;
+import android.app.Activity
+import android.app.Application
 
-import com.leondzn.starter.di.components.DaggerAppComponent;
+import com.leondzn.starter.di.components.DaggerAppComponent
 
-import javax.inject.Inject;
+import javax.inject.Inject
 
-import dagger.android.AndroidInjector;
-import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasActivityInjector;
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
 
-public class App extends Application implements HasActivityInjector {
+class App : Application(), HasActivityInjector {
   @Inject
-  DispatchingAndroidInjector<Activity> injector;
+  @JvmField
+  internal var injector: DispatchingAndroidInjector<Activity>? = null
 
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
+  override fun onCreate() {
+    super.onCreate()
     DaggerAppComponent.builder()
         .create(this)
-        .inject(this);
+        .inject(this)
   }
 
-  @Override
-  public AndroidInjector<Activity> activityInjector() {
-    return this.injector;
+  override fun activityInjector(): AndroidInjector<Activity>? {
+    return this.injector
   }
 }

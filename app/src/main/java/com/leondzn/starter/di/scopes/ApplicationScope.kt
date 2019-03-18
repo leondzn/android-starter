@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-package com.leondzn.starter.di.scopes;
+package com.leondzn.starter.di.scopes
 
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
-import javax.inject.Scope;
+import javax.inject.Scope
+import kotlin.annotation.Retention
 
 @Scope
-@Retention(RetentionPolicy.RUNTIME)
-public @interface FragmentScope {
-}
+@Retention(AnnotationRetention.RUNTIME)
+annotation class ApplicationScope
