@@ -16,7 +16,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.leondzn.starter">
+  package="com.snekbyte.starter">
 
   <application
     android:name=".App"
