@@ -22,6 +22,3 @@ dependencies {
   implementation domainDependencies.rxJava
   implementation domainDependencies.javaxInject
 }
-
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
