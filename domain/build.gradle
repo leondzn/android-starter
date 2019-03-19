@@ -22,4 +22,5 @@ dependencies {
   implementation domainDependencies.rxJava
   implementation domainDependencies.coroutines
   implementation domainDependencies.javaxInject
+  implementation domainDependencies.junit
 }
