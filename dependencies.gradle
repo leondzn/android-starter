@@ -38,7 +38,6 @@ ext {
       rxJava     : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
       coroutines : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}",
       javaxInject: "javax.inject:javax.inject:${javaxInjectVersion}",
-      junit: "junit:junit:${junitVersion}"
   ]
 
   dataDependencies = [
@@ -56,5 +55,17 @@ ext {
       daggerAndroidSupport  : "com.google.dagger:dagger-android-support:${dagger2Version}",
       daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:${dagger2Version}",
       lifecycle             : "android.arch.lifecycle:extensions:${lifecycleVersion}",
+  ]
+
+  domainTestDependencies = [
+      junit: "junit:junit:${junitVersion}",
+  ]
+
+  dataTestDependencies = [
+      junit: "junit:junit:${junitVersion}"
+  ]
+
+  appTestDependencies = [
+      junit: "junit:junit:${junitVersion}"
   ]
 }

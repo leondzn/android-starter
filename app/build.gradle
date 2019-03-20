@@ -43,6 +43,7 @@ android {
 
 dependencies {
   def appDependencies = rootProject.ext.appDependencies
+  def appTestDependencies = rootProject.ext.appTestDependencies
 
   implementation project(':domain')
   implementation project(':data')
@@ -56,6 +57,8 @@ dependencies {
 
   kapt appDependencies.dagger2compiler
   kapt appDependencies.daggerAndroidProcessor
+
+  testImplementation appTestDependencies.junit
 }
 repositories {
   mavenCentral()
