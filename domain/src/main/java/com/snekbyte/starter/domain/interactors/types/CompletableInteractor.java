@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.snekbyte.starter.interactors.types;
+package com.snekbyte.starter.domain.interactors.types;
 
 import io.reactivex.Completable;
 
-public interface CompletableInteractorWithParameter<P> {
-  Completable execute(P param);
+public interface CompletableInteractor {
+  Completable execute();
 }

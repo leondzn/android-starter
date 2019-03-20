@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-package com.snekbyte.starter.interactors.types;
+package com.snekbyte.starter.domain.interactors.types;
 
-import io.reactivex.Observable;
+import io.reactivex.Single;
 
-/**
- * @param <P> Parameter object
- * @param <R> Response data type for the Observable
- */
-public interface ObservableInteractorWithParameter<P, R> {
-  Observable<R> execute(P param);
+public interface SingleInteractor<T> {
+  Single<T> execute();
 }
