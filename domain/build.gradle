@@ -21,7 +21,7 @@ dependencies {
   def domainDependencies = rootProject.ext.domainDependencies
   def domainTestDependencies = rootProject.ext.domainTestDependencies
 
-  implementation domainDependencies.rxJava
+  implementation rootProject.ext.kotlinLib
   implementation domainDependencies.coroutines
   implementation domainDependencies.javaxInject
   testImplementation domainTestDependencies.junit
