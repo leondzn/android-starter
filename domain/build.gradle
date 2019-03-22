@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Leonard Dizon.
+ * Copyright (C) 2019 Leonard Dizon.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,14 @@
  */
 
 apply plugin: 'java'
+apply plugin: 'kotlin'
 
 dependencies {
   def domainDependencies = rootProject.ext.domainDependencies
+  def domainTestDependencies = rootProject.ext.domainTestDependencies
 
-  implementation domainDependencies.rxJava
+  implementation rootProject.ext.kotlinLib
+  implementation domainDependencies.coroutines
   implementation domainDependencies.javaxInject
+  testImplementation domainTestDependencies.junit
 }
-
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"

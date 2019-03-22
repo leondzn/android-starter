@@ -14,4 +14,9 @@
  * limitations under the License.
  */
 
-include ':app', ':domain', ':data'
+package com.snekbyte.starter.di.modules
+
+import dagger.Module
+
+@Module(includes = [ViewModelFactoryModule::class, ViewModelModule::class])
+abstract class ActivityBuilder

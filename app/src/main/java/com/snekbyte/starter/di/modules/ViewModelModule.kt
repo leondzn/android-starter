@@ -14,4 +14,17 @@
  * limitations under the License.
  */
 
-include ':app', ':domain', ':data'
+package com.snekbyte.starter.di.modules
+
+import dagger.Module
+
+/**
+ * Declare all ViewModels here
+ */
+@Module
+abstract class ViewModelModule {
+  //@Binds
+  //@IntoMap
+  //@ViewModelKey(SampleViewModel::class)
+  //abstract fun bindViewModel(viewModel: SampleViewModel): ViewModel
+}

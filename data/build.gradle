@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Leonard Dizon.
+ * Copyright (C) 2019 Leonard Dizon.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
   def globalConfig = rootProject.extensions.getByName("ext")
@@ -33,18 +35,13 @@ android {
     exclude 'META-INF/NOTICE'
     exclude 'META-INF/LICENSE'
   }
-
-  compileOptions {
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
-  }
 }
 
 dependencies {
   def dataDependencies = rootProject.ext.dataDependencies
 
   implementation project(':domain')
-  implementation dataDependencies.rxJava
+  testImplementation dataTestDependencies.junit
 }
 
 

@@ -14,4 +14,11 @@
  * limitations under the License.
  */
 
-include ':app', ':domain', ':data'
+package com.snekbyte.starter.di.scopes
+
+import javax.inject.Scope
+import kotlin.annotation.Retention
+
+@Scope
+@Retention(AnnotationRetention.RUNTIME)
+annotation class ActivityScope

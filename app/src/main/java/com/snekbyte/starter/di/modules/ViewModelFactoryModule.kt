@@ -14,4 +14,15 @@
  * limitations under the License.
  */
 
-include ':app', ':domain', ':data'
+package com.snekbyte.starter.di.modules
+
+import android.arch.lifecycle.ViewModelProvider
+import com.snekbyte.starter.ViewModelFactory
+import dagger.Binds
+import dagger.Module
+
+@Module
+abstract class ViewModelFactoryModule {
+    @Binds
+    internal abstract fun bindViewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory
+}

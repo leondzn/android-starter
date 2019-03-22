@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Leonard Dizon.
+ * Copyright (C) 2019 Leonard Dizon.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
  */
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion rootProject.androidCompileSdkVersion
@@ -33,11 +36,6 @@ android {
     }
   }
 
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
-
   dataBinding {
     enabled = true
   }
@@ -45,18 +43,22 @@ android {
 
 dependencies {
   def appDependencies = rootProject.ext.appDependencies
+  def appTestDependencies = rootProject.ext.appTestDependencies
 
   implementation project(':domain')
   implementation project(':data')
+  implementation rootProject.ext.kotlinLib
   implementation appDependencies.androidAppcompat
-  implementation appDependencies.rxAndroid
+  implementation appDependencies.lifecycle
   implementation appDependencies.dagger2
   implementation appDependencies.daggerAndroid
   implementation appDependencies.daggerAndroidSupport
 
-  annotationProcessor appDependencies.dagger2compiler
-  annotationProcessor appDependencies.daggerAndroidProcessor
+  kapt appDependencies.dagger2compiler
+  kapt appDependencies.daggerAndroidProcessor
+
+  testImplementation appTestDependencies.junit
 }
-
-
-
+repositories {
+  mavenCentral()
+}

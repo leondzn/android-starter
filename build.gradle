@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Leonard Dizon.
+ * Copyright (C) 2019 Leonard Dizon.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,38 +14,37 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-apply from: 'dependencies.gradle'
+
 
 buildscript {
-    
-    repositories {
-        google()
-        mavenCentral()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
-        
+  apply from: 'dependencies.gradle' // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+  repositories {
+    jcenter()
+    google()
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.3.2'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$rootProject.ext.kotlinVersion"
+
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+  }
 }
 
 allprojects {
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
-    }
-    ext {
-        androidVersionCode = 1
-        androidVersionName = '1.0'
-    }
+  repositories {
+    jcenter()
+    google()
+    mavenCentral()
+  }
+  ext {
+    androidVersionCode = 1
+    androidVersionName = '1.0'
+  }
 }
 
 task clean(type: Delete) {
-    delete rootProject.buildDir
+  delete rootProject.buildDir
 }

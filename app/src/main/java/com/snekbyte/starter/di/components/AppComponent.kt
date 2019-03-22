@@ -14,4 +14,18 @@
  * limitations under the License.
  */
 
-include ':app', ':domain', ':data'
+package com.snekbyte.starter.di.components
+
+import com.snekbyte.starter.App
+import com.snekbyte.starter.di.scopes.ApplicationScope
+
+import dagger.Component
+import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
+
+@Component(modules = [AndroidSupportInjectionModule::class])
+@ApplicationScope
+interface AppComponent : AndroidInjector<App> {
+  @Component.Builder
+  abstract class Builder : AndroidInjector.Builder<App>()
+}
