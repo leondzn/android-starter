@@ -26,7 +26,7 @@ ext {
 
   //libraries
   javaxInjectVersion = '1'
-  androidAppcompatVersion = '28.0.0-rc01'
+  androidxAppcompatVersion = '1.1.0-alpha03'
   dagger2Version = '2.17'
   lifecycleVersion = '1.1.1'
   coroutinesVersion = '1.1.1'
@@ -43,7 +43,7 @@ ext {
   ]
 
   appDependencies = [
-      androidAppcompat      : "com.android.support:appcompat-v7:${androidAppcompatVersion}",
+      androidxAppcompat      : "androidx.appcompat:appcompat:${androidxAppcompatVersion}",
       dagger2               : "com.google.dagger:dagger:${dagger2Version}",
       dagger2compiler       : "com.google.dagger:dagger-compiler:${dagger2Version}",
       daggerAndroid         : "com.google.dagger:dagger-android:${dagger2Version}",
