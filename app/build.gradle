@@ -22,7 +22,7 @@ apply plugin: 'kotlin-kapt'
 android {
   compileSdkVersion rootProject.androidCompileSdkVersion
   defaultConfig {
-    applicationId "com.leondzn.starter"
+    applicationId "com.snekbyte.starter"
     minSdkVersion rootProject.androidMinSdkVersion
     targetSdkVersion rootProject.androidTargetSdkVersion
     versionCode rootProject.androidVersionCode
