@@ -1,5 +1,5 @@
 package com.snekbyte.starter.domain
 
-abstract class UseCase<out T, in P> where T : Any {
-  abstract fun execute(params: P): T
+interface UseCase<out T, in P> where T : Any {
+  fun execute(params: P): T
 }
