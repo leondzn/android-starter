@@ -5,6 +5,7 @@ kotlin = "2.0.0"
 junit = "4.13.2"
 appcompat = "1.7.0"
 lifecycleRuntimeKtx = "2.8.3"
+fragmentKtx = "1.8.0"
 
 [libraries]
 dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
@@ -12,6 +13,7 @@ dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", versi
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 
 
 [plugins]

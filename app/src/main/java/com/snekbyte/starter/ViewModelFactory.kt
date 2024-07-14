@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Leonard Dizon.
+ * Copyright (C) 2024 Leonard Dizon.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,26 @@
 
 package com.snekbyte.starter
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
-import javax.inject.Inject
-import javax.inject.Provider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.AbstractSavedStateViewModelFactory
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.savedstate.SavedStateRegistryOwner
 
-@Suppress("UNCHECKED_CAST")
-class ViewModelFactory
-@Inject constructor(private val viewModelsMap: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>) :
-    ViewModelProvider.Factory {
+class ViewModelFactory<T : ViewModel>(
+    savedStateRegistryOwner: SavedStateRegistryOwner,
+    private val create: (stateHandle: SavedStateHandle) -> T
+) : AbstractSavedStateViewModelFactory(savedStateRegistryOwner, null) {
 
-  override fun <T : ViewModel> create(modelClass: Class<T>): T {
-    val creator = viewModelsMap[modelClass]
-        ?: viewModelsMap.asIterable().firstOrNull { modelClass.isAssignableFrom(it.key) }
-            ?.value ?: throw IllegalArgumentException("Unknown model class $modelClass")
-
-    return creator.get() as T
+  @Suppress("UNCHECKED_CAST")
+  override fun <T : ViewModel> create(key: String, modelClass: Class<T>, handle: SavedStateHandle): T {
+      return create.invoke(handle) as T
   }
+}
+
+inline fun <reified T : ViewModel> Fragment.lazyViewModel(
+    noinline create: (stateHandle: SavedStateHandle) -> T
+) = viewModels<T> {
+    ViewModelFactory(this, create)
 }

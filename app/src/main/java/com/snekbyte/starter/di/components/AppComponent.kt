@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Leonard Dizon.
+ * Copyright (C) 2024 Leonard Dizon.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,10 @@
 
 package com.snekbyte.starter.di.components
 
-import com.snekbyte.starter.App
 import com.snekbyte.starter.di.scopes.ApplicationScope
 
 import dagger.Component
-import dagger.android.AndroidInjector
-import dagger.android.support.AndroidSupportInjectionModule
 
-@Component(modules = [AndroidSupportInjectionModule::class])
+@Component
 @ApplicationScope
-interface AppComponent : AndroidInjector<App> {
-  @Component.Builder
-  abstract class Builder : AndroidInjector.Builder<App>()
-}
+interface AppComponent

@@ -23,6 +23,33 @@ For further reading about [Clean Architecture](http://blog.cleancoder.com/uncle-
 * Use Cases can be created by implementing the UseCase interface
 * Dependencies are managed inside the *dependencies.gradle* file for easier tracking of
   libraries across multiple modules
+
+## ViewModels and Dependency Injection
+ViewModels should use an `@AssistedInject` constructor and should include its own Factory
+with `@AssistedFactory` annotation. Parameters should also have the `@Assisted` annotation.
+```kotlin
+class CustomViewModel @AssistedInject constructor(
+  @Assisted savedStateHandle: SavedStateHandle
+): ViewModel() {
+  @AssistedFactory
+  interface Factory {
+    fun create(savedStateHandle: SavedStateHandle): CustomViewModel
+  }
+}
+```
+On your dagger component:
+```kotlin
+@Component
+interface AppComponent {
+  fun customViewModel(): CustomViewModel.Factory
+}
+```
+Use the `lazyViewModel` delegate to initialize ViewModels
+```kotlin
+private val viewModel: CustomViewModel by lazyViewModel { stateHandle ->
+  appComponent().customViewModel.create(stateHandle)
+}
+```
   
   
 ## TODO:

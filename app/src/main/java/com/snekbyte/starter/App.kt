@@ -18,29 +18,8 @@ package com.snekbyte.starter
 
 import android.app.Activity
 import android.app.Application
-
 import com.snekbyte.starter.di.components.DaggerAppComponent
 
-import javax.inject.Inject
-
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-
-class App : Application(), HasActivityInjector {
-  @Inject
-  @JvmField
-  internal var injector: DispatchingAndroidInjector<Activity>? = null
-
-
-  override fun onCreate() {
-    super.onCreate()
-    DaggerAppComponent.builder()
-        .create(this)
-        .inject(this)
-  }
-
-  override fun activityInjector(): AndroidInjector<Activity>? {
-    return this.injector
-  }
+class App : Application() {
+  val appComponent = DaggerAppComponent.create()
 }
