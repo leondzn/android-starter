@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Leonard Dizon.
+ * Copyright (C) 2024 Leonard Dizon.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,25 @@
  * limitations under the License.
  */
 
-apply plugin: 'java'
-apply plugin: 'kotlin'
-
-dependencies {
-  def domainDependencies = rootProject.ext.domainDependencies
-  def domainTestDependencies = rootProject.ext.domainTestDependencies
-
-  implementation rootProject.ext.kotlinLib
-  implementation domainDependencies.coroutines
-  implementation domainDependencies.javaxInject
-  testImplementation domainTestDependencies.junit
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
 }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+include(":app", ":domain", ":data")
