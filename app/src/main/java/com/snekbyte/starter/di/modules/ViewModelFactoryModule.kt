@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Leonard Dizon.
+ * Copyright (C) 2024 Leonard Dizon.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package com.snekbyte.starter.di.modules
 
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider
 import com.snekbyte.starter.ViewModelFactory
 import dagger.Binds
 import dagger.Module
